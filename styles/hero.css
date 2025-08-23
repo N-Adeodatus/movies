@@ -12,6 +12,10 @@
     justify-content: center;
 }
 
+#trending p {
+    margin: 0;
+}
+
 #trending-image {
     width: 20px;
     height: 20px;
