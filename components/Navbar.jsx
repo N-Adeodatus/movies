@@ -1,5 +1,6 @@
 import "/styles/navbar.css"
 import { useState } from "react"
+import { Link } from "react-router-dom"
 import menuIcon from "../images/menu.svg"
 import closeIcon from "../images/close.svg"
 
@@ -18,12 +19,14 @@ export default function Navbar() {
 
     return(
         <nav id="navbar">
-            <div id="logo-container">
-                <div id="logo">
-                    eM
+            <Link to="/" className="link">
+                <div id="logo-container">
+                    <div id="logo">
+                        eM
+                    </div>
+                    <p id="web-name">eMovieHub</p>
                 </div>
-                <p id="web-name">eMovieHub</p>
-            </div>
+            </Link>
             
             <div className="search-container">
                 <input 
@@ -47,10 +50,10 @@ export default function Navbar() {
             {/* Mobile Menu */}
             <div className={`mobile-menu ${isMenuOpen ? 'show' : ''}`}>
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/movies">Movies</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/favorites">Favorites</a></li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/movies">Movies</Link></li>
+                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/favorites">Favorites</Link></li>
                 </ul>
             </div>
         </nav>
