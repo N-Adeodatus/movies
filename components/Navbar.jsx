@@ -24,7 +24,7 @@ export default function Navbar() {
                     <div id="logo">
                         eM
                     </div>
-                    <p id="web-name">eMovieHub</p>
+                    {/* <p id="web-name">eMovieHub</p> */}
                 </div>
             </Link>
             

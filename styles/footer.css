@@ -3,6 +3,7 @@ footer {
     padding: 20px 15px;
     font-size: 14px;
     color: #94a3b8;
+    margin-top: auto;
 }
 
 #footer-header {
@@ -18,6 +19,7 @@ footer {
     grid-template-columns: repeat(auto-fit, 180px);
     gap: 16px;
     justify-content: center;
+    margin-top: auto;
 
 }
 
