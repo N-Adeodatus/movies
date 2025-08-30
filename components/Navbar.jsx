@@ -27,6 +27,13 @@ export default function Navbar() {
                     {/* <p id="web-name">eMovieHub</p> */}
                 </div>
             </Link>
+
+            <ul id="ls-nav-bar">
+                <li><Link to="/" className="link nav-link">Home</Link></li>
+                <li><Link to="/movies" className="link nav-link">Movies</Link></li>
+                <li><Link to="/about" className="link nav-link">About</Link></li>
+                <li><Link to="/favorites" className="link nav-link">Favorites</Link></li>
+            </ul>
             
             <div className="search-container">
                 <input 

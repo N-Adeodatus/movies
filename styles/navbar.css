@@ -23,6 +23,17 @@
     z-index: 1000;
 }
 
+#navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin-left: 2rem;   
+}
+
+.nav-link:hover {
+    color: #ef4444;
+}
+
 #web-name {
     color: #ffffff;
     font-size: 20px;
@@ -39,6 +50,7 @@
     display: flex;
     align-items: center;
     margin-right: 3rem;
+    display: none;
 }
 
 #menu-icon {
@@ -68,42 +80,54 @@
     color: #9ca3af;
 }
 
+/* Mobile menu styles */
 .mobile-menu {
-    position: fixed;
-    top: 60px;
+    display: none;  /* Hidden by default */
+    position: absolute;
+    top: 100%;  /* Position right below navbar */
     left: 0;
-    width: 100%;
-    height: 0;
-    background-color: #1f2937;
-    overflow: hidden;
-    transition: height 0.3s ease-in-out;
+    right: 0;
+    background-color: #0f172a;  /* Match your navbar color */
+    padding: 1rem;
 }
 
 .mobile-menu.show {
-    height: auto;
-    padding: 20px 0;
-    border-top: 1px solid #374151;
+    display: block;
 }
 
 .mobile-menu ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;  /* Stack items vertically */
+    gap: 1rem;
 }
 
 .mobile-menu li {
-    padding: 15px 20px;
-    border-bottom: 1px solid #374151;
-}
-
-.mobile-menu li:last-child {
-    border-bottom: none;
+    width: 100%;
 }
 
 .mobile-menu a {
-    color: white;
+    color: #cbd5e1;
     text-decoration: none;
-    font-size: 16px;
     display: block;
-    width: 100%;
+    padding: 0.5rem 1rem;
+}
+
+/* Show mobile menu only on small screens */
+@media screen and (min-width: 769px) {
+    .mobile-menu {
+        display: none !important;  /* Force hide on larger screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #navbar ul {
+        display: none;
+    }
+
+    #menu-icon-container {
+        display: block;
+    }
 }

@@ -1,0 +1,39 @@
+#movies-page-container {
+    padding: 20px;
+}
+
+#title {
+    margin-top: 70px;
+    color: #ffffff
+}
+
+#genres-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.genre-btn {
+    width: 5rem;
+    height: 2rem;
+    border-radius: 5px;
+    background-color: transparent;
+    color: inherit;
+    border: 1px solid #374151;
+}
+
+.genre-btn:hover {
+    background-color: #374151;
+    cursor: pointer;
+}
+
+.genre-btn:active {
+    background-color: #b91c1c;
+    color: #ffffff;
+}
+
+.active {
+    background-color: #b91c1c;
+    color: #ffffff;
+}
