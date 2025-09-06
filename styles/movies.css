@@ -44,10 +44,11 @@
     grid-template-columns: repeat(auto-fit, 200px);
     grid-auto-rows: 40  0px;
     gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
 }
 
 .card {
-    width: 200px;
     margin: 10px;
     border-radius: 10px;
     background-color: #1f2937;
@@ -79,7 +80,7 @@
 }
 
 .movie-name {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     margin: 0;
     margin-bottom: 0.5rem;

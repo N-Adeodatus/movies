@@ -1,11 +1,13 @@
 export async function getMovies() {
-
-    const url = 'https://imdb236.p.rapidapi.com/api/imdb/search?type=movie&genre=Drama&rows=25&sortOrder=ASC&sortField=id';
+    // URL: https://imdb236.p.rapidapi.com/api/imdb/search?type=movie&genre=Drama&rows=25&sortOrder=ASC&sortField=id'
+    // x-rapidapi-key': '80c50463f1mshe288ac661da63a9p1d6adcjsn6ea75bfc13a4
+    // x-rapidapi-host': 'imdb236.p.rapidapi.com
+    const url = 'https://imdb-top-100-movies.p.rapidapi.com/';
     const options = {
         method: 'GET',
         headers: {
             'x-rapidapi-key': '80c50463f1mshe288ac661da63a9p1d6adcjsn6ea75bfc13a4',
-            'x-rapidapi-host': 'imdb236.p.rapidapi.com'
+            'x-rapidapi-host': 'imdb-top-100-movies.p.rapidapi.com'
         }
     };
     
@@ -15,6 +17,7 @@ export async function getMovies() {
             console.log('movies fetched')
             const response = await fetch(url, options);
             result = await response.json(); 
+            console.log('result', result)
             localStorage.setItem('moviesDetails', JSON.stringify(result))
             return result
         }
