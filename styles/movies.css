@@ -1,5 +1,6 @@
 #movies-page-container {
     padding: 20px;
+    height: auto;
 }
 
 #title {
@@ -36,4 +37,99 @@
 .active {
     background-color: #b91c1c;
     color: #ffffff;
+}
+
+#cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
+    grid-auto-rows: 40  0px;
+    gap: 1rem;
+}
+
+.card {
+    width: 200px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: #1f2937;
+    color: #ffffff;
+    overflow: hidden; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+    position: relative;
+}
+
+.moviePoster {
+    width: 100%;
+}
+
+.HD-badge {
+    position: absolute;
+    background-color: rgb(15, 23, 42);
+    color: white;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 3px;
+    top: 10px;
+    left: 10px;
+}
+
+.movie-poster-details {
+    padding: 0.5rem;
+}
+
+.movie-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 0.5rem;
+}
+
+.details-container {
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.duration-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rating-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 0.3rem;
+}
+
+.time-icon {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+
+.yellow-star-icon {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+
+.duration-text, .rating-text {
+    font-size: 14px;
+    margin: 0;
+}
+
+.duration-text {
+    color: #9ca3af;
+}
+
+.rating-text {
+    color: #fbbf24;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
 }
