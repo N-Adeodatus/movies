@@ -1,6 +1,6 @@
 import '../styles/movies.css';
 import { getMovies } from '../fetchMovies';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import star from '../images/yello-star.svg';
 import time from '../images/time.svg';
@@ -45,6 +45,8 @@ export default function Movies() {
             <div id='cards-container'>
                 {
                     paginatedMovies.filter( film => film).map((movie, index) => (
+                        <Link to={`/movies/${movie.imdbid}`} state={movie} >
+
                         <div className="card" key={index}>
                             <div className="HD-badge">
                                 HD
@@ -66,6 +68,7 @@ export default function Movies() {
                                 </div>
                             </div>
                         </div>
+                        </Link>
                     ))
                 }
                 </div>

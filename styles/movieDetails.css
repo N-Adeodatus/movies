@@ -1,0 +1,55 @@
+#moviedetails {
+    margin-top: 80px;
+    padding: 20px;
+}
+
+#back-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    background-color: #1f2937;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#back-button:hover {
+    background-color: #374151;
+    cursor: pointer;
+}
+
+#movie-details-main-container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+#movie-poster-container {
+    width: 300px;
+
+}
+
+#movie-poster {
+    width: 100%;
+    border-radius: 10px;
+}
+
+#yello-star-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    
+}
+
+#rating {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    gap: 5px;
+}
+
+#rating p {
+    margin: 0;
+}
