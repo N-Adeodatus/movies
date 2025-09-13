@@ -16,7 +16,12 @@ export default function Navbar() {
         setSearchQuery(e.target.value);
         // Implement search logic here
     };
-
+    console.log(localStorage.getItem('moviesDetails'))
+    const filteredMovies = searchQuery
+        ? JSON.parse(localStorage.getItem('moviesDetails')).filter((movie, index) =>  movie.title &&
+            movie.title.toString().toLowerCase().includes(searchQuery.toLowerCase())
+        )
+        : []
     return(
         <nav id="navbar">
             <Link to="/" className="link">
@@ -35,14 +40,34 @@ export default function Navbar() {
                 <li><Link to="/favorites" className="link nav-link">Favorites</Link></li>
             </ul>
             
-            <div className="search-container">
-                <input 
-                    type="text" 
-                    placeholder="Search movies..."
-                    value={searchQuery}
-                    onChange={handleSearch}
-                    className="search-input"
-                />
+            <div id='search-content'>
+                <div className="search-container">
+                    <input 
+                        type="text" 
+                        placeholder="Search movies..."
+                        value={searchQuery}
+                        onChange={handleSearch}
+                        className="search-input"
+                    />
+                </div>
+                {
+                    searchQuery &&
+                    <div className="search-results">
+                        {filteredMovies.length > 0 ?
+                        filteredMovies.filter((movie, index) => index < 5).map((movie, index) => (
+                            <div className="movie-search-card" key={index}>
+                                <div className="search-image-container">
+                                    <img src={movie.image} alt="" />
+                                </div>
+                                <div className="name-container">
+                                    <p>{movie.title}</p>
+                                </div>
+                            </div>
+                        )) : ''
+                    }
+                    </div>
+                    
+                }
             </div>
 
             <div id="menu-icon-container">
