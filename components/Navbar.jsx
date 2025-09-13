@@ -7,6 +7,7 @@ import closeIcon from "../images/close.svg"
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
+    const [searchIsFocused, setSearchIsFocused] = useState(false);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -48,21 +49,25 @@ export default function Navbar() {
                         value={searchQuery}
                         onChange={handleSearch}
                         className="search-input"
+                        onFocus={() => setSearchIsFocused(true)}
+                        onBlur={() => setTimeout(() => setSearchIsFocused(false), 200)}
                     />
                 </div>
                 {
-                    searchQuery &&
+                    searchQuery && searchIsFocused &&
                     <div className="search-results">
                         {filteredMovies.length > 0 ?
-                        filteredMovies.filter((movie, index) => index < 5).map((movie, index) => (
-                            <div className="movie-search-card" key={index}>
-                                <div className="search-image-container">
-                                    <img src={movie.image} alt="" />
+                        filteredMovies.map((movie, index) => (
+                            <Link to={`/movies/${movie.imdbid}`} state={movie} className="link" key={index} onClick={() => setSearchQuery('')}>
+                                <div className="movie-search-card">
+                                    <div className="search-image-container">
+                                        <img src={movie.image} alt="" />
+                                    </div>
+                                    <div className="name-container">
+                                        <p>{movie.title}</p>
+                                    </div>
                                 </div>
-                                <div className="name-container">
-                                    <p>{movie.title}</p>
-                                </div>
-                            </div>
+                            </Link>
                         )) : ''
                     }
                     </div>
