@@ -59,6 +59,11 @@
     position: relative;
 }
 
+.card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
 .moviePoster {
     width: 100%;
 }
@@ -134,3 +139,38 @@
     transform: scale(1.05);
     cursor: pointer;
 }
+
+#pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.page-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #374151;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.page-btn:hover {
+    background-color: #4b5563;
+}
+
+#pagination .page-btn.active {
+    background-color: #b91c1c; /* selected bg */
+    color: #ffffff;            /* selected text color */
+    box-shadow: 0 4px 10px rgba(185,28,28,0.25);
+    transform: translateY(-1px);
+}
+
+/* optional: hover for non-active buttons */
+#pagination .page-btn:not(.active):hover {
+    background-color: #4b5563;
+}
+

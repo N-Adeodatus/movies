@@ -22,7 +22,8 @@ export default function Movies() {
     const filterGenre = moviesInfo.filter( movie => movie.genre.includes(genre) || genre === 'All')
     const numberPerPage = 15
     const numberOfPages = Math.ceil(filterGenre.length / numberPerPage)
-    const startIndex = ((Number(searchParams.get("page")) || 1) - 1) * numberPerPage
+    const currentPage = Number(searchParams.get("page")) || 1
+    const startIndex = (currentPage - 1) * numberPerPage
     const endIndex = startIndex + numberPerPage
     const paginatedMovies = filterGenre.slice(startIndex, endIndex)
     return (
@@ -45,8 +46,7 @@ export default function Movies() {
             <div id='cards-container'>
                 {
                     paginatedMovies.filter( film => film).map((movie, index) => (
-                        <Link to={`/movies/${movie.imdbid}`} state={movie} >
-
+                        <Link to={`/movies/${movie.imdbid}`} state={movie} className='card-link'>
                         <div className="card" key={index}>
                             <div className="HD-badge">
                                 HD
@@ -80,12 +80,12 @@ export default function Movies() {
                 Array.from({length: numberOfPages}, (_, index) => (
                     <button
                         key={index}
-                        className={`page-btn ${Number(searchParams.get("page") || 1) === index + 1 ? 'actibe' : ''}`}
+                        className={`page-btn ${Number(searchParams.get("page") || 1) === index + 1 ? 'active' : ''}`}
                         onClick={() => setSearchParam({genre: activeGenre, page: index + 1})}
                     >
                         {index + 1}
-                    </button>
-                ))
+                    </button>)
+                )
                 }
 
             </div>
